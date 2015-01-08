@@ -16,7 +16,8 @@ YourController < SimpleController
 
 ### Provided methods
 
-Actually, SimpleController provides all CRUD methods of Rails and it is only possible to deactivate them by overriding the methods in your controller implementation.
+Actually, SimpleController provides all `CRUD` methods of Rails and it is only possible to deactivate them by overriding the methods in your controller implementation.
+Next, if you don't want to have permitted all model attributes, you need to override the `model_params` method.
 
 ### Required Adaption:
 
