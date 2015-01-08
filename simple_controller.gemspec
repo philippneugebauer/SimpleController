@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description = "Simplifying your rails controllers logic"
   s.authors     = ["Philipp Neugebauer"]
   s.email       = 'ppn@nexgo.de'
-  s.files       = ["lib/base_controller.rb"]
+  s.files       = ["lib/simple_controller.rb"]
   s.homepage    = 'http://rubygems.org/gems/simple_controller'
   s.license     = 'MIT'
 	s.required_ruby_version = '>= 1.9.3'
