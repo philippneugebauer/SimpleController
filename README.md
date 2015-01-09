@@ -11,7 +11,7 @@ Installation is done by the following commands:
 
 Use it in your controllers:
 ```ruby 
-class YourController
+class YourController < ActionController::Base (or another parent class extending this class)
   include SimpleController::IndexController (index)
   include SimpleController::CreateController (new + create)
   include SimpleController::ShowController (show)
