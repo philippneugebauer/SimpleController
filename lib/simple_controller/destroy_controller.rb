@@ -1,5 +1,5 @@
 # encoding: UTF-8
-class DestroyController < ActionController::Base
+module DestroyController
   include SimpleController
   before_action :set_object, only: [:destroy]
 

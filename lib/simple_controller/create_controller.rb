@@ -1,5 +1,5 @@
 # encoding: UTF-8
-class CreateController < ActionController::Base
+module CreateController
   include SimpleController
 
   def index

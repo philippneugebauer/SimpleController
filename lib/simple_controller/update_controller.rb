@@ -1,5 +1,5 @@
 # encoding: UTF-8
-class UpdateController < ActionController::Base
+module UpdateController
   include SimpleController
   before_action :set_object, only: [:edit, :update]
 
