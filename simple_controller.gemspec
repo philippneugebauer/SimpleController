@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.description = "Simplifying your rails controllers logic"
   spec.authors     = ["Philipp Neugebauer"]
   spec.email       = 'ppn@nexgo.de'
-  spec.files       = ["lib/simple_controller.rb"]
+  spec.files       = Dir['Rakefile', '{bin,lib,man,test,spec}/**/*', 'README*', 'LICENSE*'] & `git ls-files -z`.split("\0")
   spec.test_files  = ["test/simple_controller_test.rb"]
   spec.homepage    = 'http://rubygems.org/gems/simple_controller'
   spec.license     = 'MIT'
