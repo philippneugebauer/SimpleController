@@ -1,10 +1,5 @@
 $:.push File.expand_path("../lib", __FILE__)
 require 'simple_controller/version'
-require 'simple_controller/create_controller'
-require 'simple_controller/update_controller'
-require 'simple_controller/destroy_controller'
-require 'simple_controller/index_controller'
-require 'simple_controller/show_controller'
 
 Gem::Specification.new do |spec|
   spec.platform    = Gem::Platform::RUBY
