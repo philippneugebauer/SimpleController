@@ -1,3 +1,4 @@
+$:.push File.expand_path("../lib", __FILE__)
 require 'simple_controller/version'
 require 'simple_controller/create_controller'
 require 'simple_controller/update_controller'
