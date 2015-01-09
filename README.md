@@ -11,13 +11,19 @@ Installation is done by the following commands:
 
 Use it in your controllers:
 ```ruby 
-YourController < SimpleController
+class YourController
+  include SimpleController::IndexController (index)
+  include SimpleController::CreateController (new + create)
+  include SimpleController::ShowController (show)
+  include SimpleController::UpdateController (edit + update)
+  include SimpleController::DestroyController (destroy)
 ```
 
 ### Provided methods
 
 Actually, SimpleController provides all `CRUD` methods of Rails and it is only possible to deactivate them by overriding the methods in your controller implementation.
 Next, if you don't want to have permitted all model attributes, you need to override the `model_params` method.
+If you use a customized `id` for your model, you also need to override the `set_model` method.
 
 ### Required Adaption:
 
