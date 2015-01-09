@@ -20,10 +20,13 @@ module SimpleController
 
   module DestroyController
     include SimpleController
-    #before_action :set_object, only: [:destroy]
+    extend ActiveSupport::Concern
+
+    included do
+      before_action :set_object, only: :destroy
+    end
 
     def destroy
-      set_object
       model_instance_variable.destroy
       redirect_to({action: 'index'}, {notice: I18n.t('successful_deletion')})
     end
@@ -31,14 +34,13 @@ module SimpleController
 
   module UpdateController
     include SimpleController
-    #before_action :set_object, only: [:edit, :update]
+    extend ActiveSupport::Concern
 
-    def edit
-      set_object
+    included do
+      before_action :set_object, only: [:edit, :update]
     end
 
     def update
-      set_object
       if model_instance_variable.update(model_params)
         redirect_to({action: 'index'}, {notice: I18n.t('successful_update')})
       else
@@ -57,13 +59,11 @@ module SimpleController
 
   module ShowController
     include SimpleController
-    #include AbstractController::Callbacks
-    #include ActiveSupport::Callbacks
+    extend ActiveSupport::Concern
 
-    def show
-      set_object
+    included do
+      before_action :set_object, only: :show
     end
-    #before_action :set_object, only: [:show]
   end
 
 
