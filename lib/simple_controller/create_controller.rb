@@ -2,11 +2,6 @@
 require 'action_controller'
 module SimpleController
   class CreateController < ActionController::Base
-
-    def index
-      setup_instance_variable(model_name.all, model_name.to_s.pluralize.underscore)
-    end
-
     def new
       setup_instance_variable model_name.new
     end
@@ -20,6 +15,5 @@ module SimpleController
         render 'new'
       end
     end
-
   end
 end
