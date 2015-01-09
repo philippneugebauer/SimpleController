@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec|
   spec.platform    = Gem::Platform::RUBY
   spec.name        = 'simple_controller'
-  spec.version     = '0.0.1'
+  spec.version     = '0.0.2'
   spec.date        = '2015-01-08'
   spec.summary     = "Simplifies your rails controller logic to avoid useless redundant code by providing the standard controller methods"
   spec.description = "Simplifying your rails controllers logic"
