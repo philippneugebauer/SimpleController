@@ -1,40 +1,5 @@
 # encoding: UTF-8
-class SimpleController < ActionController::Base
-  before_action :set_object, only: [:edit, :update, :destroy]
-
-  #TODO: chance to deactivate some methods
-
-  def index
-    setup_instance_variable(model_name.all, model_name.to_s.pluralize.underscore)
-  end
-
-  def new
-    setup_instance_variable model_name.new
-  end
-
-  def create
-    setup_instance_variable model_name.new(model_params)
-
-    if model_instance_variable.save
-      redirect_to action: 'index', notice: I18n.t('successful_creation')
-    else
-      render 'new'
-    end
-  end
-
-  def update
-    if model_instance_variable.update(model_params)
-      redirect_to action: 'index', notice: I18n.t('successful_update')
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    model_instance_variable.destroy
-    redirect_to action: 'index', notice: I18n.t('successful_deletion')
-  end
-
+module SimpleController
   def model_name_as_sym
     model_name.to_s.underscore
   end
