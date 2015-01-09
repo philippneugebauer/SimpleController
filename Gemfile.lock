@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simple_controller (0.0.2)
+    simple_controller (0.0.3)
       rails (>= 4.0)
 
 GEM
