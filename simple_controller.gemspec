@@ -1,7 +1,14 @@
+require 'simple_controller/version'
+require 'simple_controller/create_controller'
+require 'simple_controller/update_controller'
+require 'simple_controller/destroy_controller'
+require 'simple_controller/index_controller'
+require 'simple_controller/show_controller'
+
 Gem::Specification.new do |spec|
   spec.platform    = Gem::Platform::RUBY
   spec.name        = 'simple_controller'
-  spec.version     = '0.0.2'
+  spec.version     = SimpleController::VERSION
   spec.date        = '2015-01-08'
   spec.summary     = "Simplifies your rails controller logic to avoid useless redundant code by providing the standard controller methods"
   spec.description = "Simplifying your rails controllers logic"
