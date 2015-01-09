@@ -1,11 +1,11 @@
 PATH
   remote: .
   specs:
-    simple_controller (0.0.3)
+    simple_controller (0.0.0)
       rails (>= 4.0)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (4.2.0)
       actionpack (= 4.2.0)
