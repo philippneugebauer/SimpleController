@@ -11,7 +11,7 @@ module SimpleController
       setup_instance_variable model_name.new(model_params)
 
       if model_instance_variable.save
-        redirect_to action: 'index', notice: I18n.t('successful_creation')
+          redirect_to({action: 'index'}, {notice: I18n.t('successful_creation')})
       else
         render 'new'
       end
@@ -25,7 +25,7 @@ module SimpleController
     def destroy
       set_object
       model_instance_variable.destroy
-      redirect_to action: 'index', notice: I18n.t('successful_deletion')
+      redirect_to({action: 'index'}, {notice: I18n.t('successful_deletion')})
     end
   end
 
@@ -40,7 +40,7 @@ module SimpleController
     def update
       set_object
       if model_instance_variable.update(model_params)
-        redirect_to action: 'index', notice: I18n.t('successful_update')
+        redirect_to({action: 'index'}, {notice: I18n.t('successful_update')})
       else
         render 'edit'
       end
