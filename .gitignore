@@ -30,3 +30,5 @@ config/secrets.yml
 .idea/
 *.bowerrc
 bower.json
+
+*.gem
