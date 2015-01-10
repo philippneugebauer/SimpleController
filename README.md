@@ -30,10 +30,11 @@ If you use a customized `id` for your model, you also need to override the `set_
 ### Required Adaption:
 
 Add to your language files translations for the following symbols:
-
-    successful_creation
-    successful_update
-    successful_deletion
+    
+    your_language:
+      successful_creation
+      successful_update
+      successful_deletion
 
 ### License
 
