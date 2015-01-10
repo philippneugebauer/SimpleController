@@ -15,7 +15,9 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'http://rubygems.org/gems/simple_controller'
   spec.license     = 'MIT'
 	spec.required_ruby_version = '>= 1.9.3'
-	spec.add_dependency 'rails', '>= 4.0'
-  spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.0"
+	spec.add_dependency 'rails', '~> 4.0'
+  spec.add_dependency 'activesupport', '~> 4.2.0'
+  spec.add_development_dependency 'bundler', '~> 1.7'
+  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'coveralls'
 end
