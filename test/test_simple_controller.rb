@@ -1,7 +1,10 @@
+require 'coveralls'
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+Coveralls.wear!
 require 'minitest/autorun'
 require 'rake/testtask'
-require 'active_support/inflector'
-require 'active_support/concern'
+require 'active_support'
 require 'simple_controller'
 
 class EasyController
