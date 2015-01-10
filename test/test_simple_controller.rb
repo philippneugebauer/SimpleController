@@ -9,6 +9,13 @@ class EasyController
   include SimpleController
 end
 
+class Admin
+  class EasyController
+    extend ActiveSupport::Inflector
+    include SimpleController
+  end
+end
+
 class Easy
 end
 
@@ -18,7 +25,7 @@ class TestSimpleController < Minitest::Test
     assert_equal(Easy, EasyController.new.model_name)
   end
 
-  #def test_modulized_model_name
-    #assert_equal('Easy', Admin::EasyController.new.model_name)
-  #end
+  def test_modulized_model_name
+    assert_equal(Easy, Admin::EasyController.new.model_name)
+  end
 end
