@@ -1,5 +1,7 @@
-require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
+if ENV['COVERAGE']
+  require "codeclimate-test-reporter"
+  CodeClimate::TestReporter.start
+end
 require 'minitest/autorun'
 require 'rake/testtask'
 require 'active_support/inflector'
