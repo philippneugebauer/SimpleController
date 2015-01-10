@@ -1,7 +1,5 @@
-require 'coveralls'
 require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
-Coveralls.wear!
 require 'minitest/autorun'
 require 'rake/testtask'
 require 'active_support/inflector'
