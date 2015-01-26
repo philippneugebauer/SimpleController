@@ -21,6 +21,8 @@ class YourController < ActionController::Base (or another parent class extending
   include SimpleController::DestroyController (destroy)
 ```
 
+The generated instance variable using in your view will be `plural model name` for the index site, otherwise the `singular model name`. Assuming a model called pen will named `@pens` for the index site, otherwise `@pen`.
+
 ### Provided methods
 
 Actually, SimpleController provides all `CRUD` methods of Rails and it is only possible to deactivate them by overriding the methods in your controller implementation.
