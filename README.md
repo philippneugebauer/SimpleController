@@ -21,7 +21,7 @@ class YourController < ActionController::Base (or another parent class extending
   include SimpleController::DestroyController (destroy)
 ```
 
-The generated instance variable using in your view will be `plural model name` for the index site, otherwise the `singular model name`. Assuming a model called pen will named `@pens` for the index site, otherwise `@pen`.
+The generated instance variable usable for your views will be `plural model name` at index site, otherwise the `singular model name`. Assuming a model called pen will named `@pens` at index site, otherwise `@pen`.
 
 ### Provided methods
 
