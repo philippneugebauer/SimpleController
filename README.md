@@ -29,6 +29,20 @@ Actually, SimpleController provides all `CRUD` methods of Rails and it is only p
 Next, if you don't want to have permitted all model attributes, you need to override the `model_params` method.
 If you use a customized `id` for your model, you also need to override the `set_model` method.
 
+That means that you just need to add a method like this to your class:
+
+```ruby
+def model_params
+    params.require(:user).permit(:name, :age})
+end
+```
+or
+```ruby
+def set_object
+    User.find(params[:email])
+end
+```
+
 ### Required Adaption:
 
 Add to your language files translations for the following symbols:
