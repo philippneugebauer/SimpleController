@@ -33,7 +33,7 @@ That means that you just need to add a method like this to your class:
 
 ```ruby
 def model_params
-    params.require(:user).permit(:name, :age})
+    params.require(:user).permit(:name, :age)
 end
 ```
 or
