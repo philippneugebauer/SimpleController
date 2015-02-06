@@ -1,6 +1,6 @@
 ### SimpleController
 
-[![Build Status](https://travis-ci.org/philippneugebauer/SimpleController.svg?branch=master)](https://travis-ci.org/philippneugebauer/SimpleController) [![Code Climate](https://codeclimate.com/github/philippneugebauer/SimpleController/badges/gpa.svg)](https://codeclimate.com/github/philippneugebauer/SimpleController) [![Test Coverage](https://codeclimate.com/github/philippneugebauer/SimpleController/badges/coverage.svg)](https://codeclimate.com/github/philippneugebauer/SimpleController)
+[![Build Status](https://travis-ci.org/philippneugebauer/SimpleController.svg?branch=master)](https://travis-ci.org/philippneugebauer/SimpleController) [![Code Climate](https://codeclimate.com/github/philippneugebauer/SimpleController/badges/gpa.svg)](https://codeclimate.com/github/philippneugebauer/SimpleController) [![Test Coverage](https://codeclimate.com/github/philippneugebauer/SimpleController/badges/coverage.svg)](https://codeclimate.com/github/philippneugebauer/SimpleController)[![Dependency Status](https://gemnasium.com/philippneugebauer/SimpleController.svg)](https://gemnasium.com/philippneugebauer/SimpleController)
 
 This gem provides you the standard logic of a rails controller which needn't to be implemented by every controller in the same way. Therefore, this gem gives you the chance to avoid a lot of redundant code which furthermore improves the maintainability of your code.
 
