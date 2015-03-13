@@ -6,9 +6,8 @@ rvm:
   - 2.1.5
   - 2.0.0
   - 1.9.3
-  
-gemfile:
-  - simple_controller.gemspec
+
+install: bundle install --jobs=3 --retry=3 && gem install rails  
 
 script: 'bundle exec rake coverage=true'
 
