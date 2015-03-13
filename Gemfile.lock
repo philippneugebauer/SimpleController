@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simple_controller (0.0.0)
+    simple_controller (0.0.1)
       activesupport (~> 4.2.0)
       rails (~> 4.0)
       tzinfo-data
