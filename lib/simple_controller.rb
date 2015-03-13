@@ -20,13 +20,9 @@ module SimpleController
 
   module DestroyController
     include SimpleController
-    extend ActiveSupport::Concern
-
-    included do
-      before_action :set_object, only: :destroy
-    end
 
     def destroy
+      set_object
       notice = model_instance_variable.destroy ? I18n.t('successful_deletion') : I18n.t('unsuccessful_deletion')
       redirect_to({action: 'index'}, {notice: notice})
     end
@@ -59,10 +55,9 @@ module SimpleController
 
   module ShowController
     include SimpleController
-    extend ActiveSupport::Concern
 
-    included do
-      before_action :set_object, only: :show
+    def show
+      set_object
     end
   end
 
