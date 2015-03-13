@@ -56,4 +56,4 @@ Add to your language files translations for the following symbols:
 
 ### License
 
-[MIT](LICENSE)
+[MIT](MIT-LICENSE)
