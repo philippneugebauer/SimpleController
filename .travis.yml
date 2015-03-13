@@ -6,8 +6,11 @@ rvm:
   - 2.1.5
   - 2.0.0
   - 1.9.3
+  
+gemfile:
+  - simple_controller.gemspec
 
-script: 'cd test/dummy/ && rake db:setup && cd ../.. && bundle exec rake coverage=true'
+script: 'bundle exec rake coverage=true'
 
 addons:
   code_climate:
