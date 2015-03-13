@@ -51,6 +51,8 @@ Add to your language files translations for the following symbols:
       successful_creation
       successful_update
       successful_deletion
+      unsuccessful_deletion
+
 
 ### License
 

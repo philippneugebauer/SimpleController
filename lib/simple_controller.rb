@@ -27,8 +27,8 @@ module SimpleController
     end
 
     def destroy
-      model_instance_variable.destroy
-      redirect_to({action: 'index'}, {notice: I18n.t('successful_deletion')})
+      notice = model_instance_variable.destroy ? I18n.t('successful_deletion') : I18n.t('unsuccessful_deletion')
+      redirect_to({action: 'index'}, {notice: notice})
     end
   end
 
