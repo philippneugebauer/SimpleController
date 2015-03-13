@@ -1,12 +1,4 @@
-if ENV['COVERAGE']
-  require "codeclimate-test-reporter"
-  CodeClimate::TestReporter.start
-end
-require 'minitest/autorun'
-require 'rake/testtask'
-require 'active_support/inflector'
-require 'active_support/concern'
-require 'simple_controller'
+require 'test_helper'
 
 class EasyController
   extend ActiveSupport::Inflector
@@ -23,7 +15,7 @@ end
 class Easy
 end
 
-class TestSimpleController < Minitest::Test
+class SimpleControllerUnitTest < Minitest::Test
 
   def test_model_name
     assert_equal(Easy, EasyController.new.model_name)
