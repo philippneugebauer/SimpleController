@@ -7,7 +7,7 @@ rvm:
   - 2.0.0
   - 1.9.3
 
-script: 'bundle exec rake coverage=true'
+script: 'cd test/dummy/ && rake db:setup && cd ../.. && bundle exec rake coverage=true'
 
 addons:
   code_climate:
