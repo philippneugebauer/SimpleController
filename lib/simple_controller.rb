@@ -84,7 +84,7 @@ module SimpleController
   end
 
   def model_params
-    params.require(model_name_as_sym.to_sym).permit(model_name.attribute_names.collect { |name| name.to_sym })
+    params.require(model_name_as_sym.to_sym).permit(model_name.attribute_names.collect { |name| name.to_sym unless name.eql? 'id' })
   end
 
   def set_object
