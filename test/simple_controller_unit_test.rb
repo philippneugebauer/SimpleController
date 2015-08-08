@@ -37,6 +37,14 @@ class SimpleControllerUnitTest < Minitest::Test
     assert(String, e.model_instance_variable.class)
   end
 
+  def test_has_modul_name
+    assert_equal(true, Admin::EasyController.new)
+  end
+
+  def test_has_no_modul_name
+    assert_equal(false, EasyController.new)
+  end
+
   def test_modul_name
     assert_equal("", EasyController.new.modul_name)
   end
