@@ -46,7 +46,7 @@ class SimpleControllerUnitTest < Minitest::Test
   end
 
   def test_modul_name
-    assert_equal("", EasyController.new.modul_name)
+    assert_empty(EasyController.new.modul_name)
   end
 
   def test_modulized_modul_name
@@ -54,7 +54,7 @@ class SimpleControllerUnitTest < Minitest::Test
   end
 
   def test_modul_name_with_underscore
-    assert_equal("", EasyController.new.modul_name_with_underscore)
+    assert_empty(EasyController.new.modul_name_with_underscore)
   end
 
   def test_modulized_modul_name_with_underscore
