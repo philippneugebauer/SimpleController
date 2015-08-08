@@ -11,7 +11,7 @@ module SimpleController
       setup_instance_variable model_name.new(model_params)
 
       if model_instance_variable.save
-          redirect_to({action: 'index'}, {notice: I18n.t('successful_creation')})
+          redirect_to(send redirect_path, {notice: I18n.t('successful_creation')})
       else
         render 'new'
       end
@@ -24,7 +24,7 @@ module SimpleController
     def destroy
       set_object
       notice = model_instance_variable.destroy ? I18n.t('successful_deletion') : I18n.t('unsuccessful_deletion')
-      redirect_to({action: 'index'}, {notice: notice})
+      redirect_to(send redirect_path, {notice: notice})
     end
   end
 
@@ -38,7 +38,7 @@ module SimpleController
 
     def update
       if model_instance_variable.update(model_params)
-        redirect_to({action: 'index'}, {notice: I18n.t('successful_update')})
+        redirect_to(send redirect_path, {notice: I18n.t('successful_update')})
       else
         render 'edit'
       end
@@ -61,6 +61,10 @@ module SimpleController
     end
   end
 
+  def redirect_path
+    model_path = "#{model_name_as_sym.pluralize}_path"
+    has_modul_name? ? "#{modul_name_with_underscore}#{model_path}" : model_path
+  end
 
   def model_name_as_sym
     model_name.to_s.underscore
@@ -68,6 +72,18 @@ module SimpleController
 
   def model_name
     self.class.name.demodulize.sub("Controller", "").classify.constantize
+  end
+
+  def modul_name
+    self.class.name.deconstantize.to_s.underscore
+  end
+
+  def modul_name_with_underscore
+    has_modul_name? ? "#{modul_name}_" : ""
+  end
+
+  def has_modul_name?
+    modul_name.present?
   end
 
   def model_instance_variable

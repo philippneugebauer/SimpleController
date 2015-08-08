@@ -36,4 +36,28 @@ class SimpleControllerUnitTest < Minitest::Test
     assert_equal("HELLO", e.model_instance_variable.to_s)
     assert(String, e.model_instance_variable.class)
   end
+
+  def test_modul_name
+    assert_equal("", EasyController.new.modul_name)
+  end
+
+  def test_modulized_modul_name
+    assert_equal("admin", Admin::EasyController.new.modul_name)
+  end
+
+  def test_modul_name_with_underscore
+    assert_equal("", EasyController.new.modul_name_with_underscore)
+  end
+
+  def test_modulized_modul_name_with_underscore
+    assert_equal("admin_", Admin::EasyController.new.modul_name_with_underscore)
+  end
+
+  def test_redirect_path
+    assert_equal("easies_path", EasyController.new.redirect_path)
+  end
+
+  def test_modulized_redirect_path
+    assert_equal("admin_easies_path", Admin::EasyController.new.redirect_path)
+  end
 end
