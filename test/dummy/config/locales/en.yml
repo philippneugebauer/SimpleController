@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  successful_creation: "Successfully created!"
+  successful_update: "Successfully updated!"
+  successful_deletion: "Successfully deleted!"
