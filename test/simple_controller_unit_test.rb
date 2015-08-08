@@ -38,11 +38,11 @@ class SimpleControllerUnitTest < Minitest::Test
   end
 
   def test_has_modul_name
-    assert_equal(true, Admin::EasyController.new)
+    assert(Admin::EasyController.new.has_modul_name?)
   end
 
   def test_has_no_modul_name
-    assert_equal(false, EasyController.new)
+    assert_equal(false, EasyController.new.has_modul_name?)
   end
 
   def test_modul_name
