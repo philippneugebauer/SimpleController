@@ -23,6 +23,9 @@ module SimpleController
 
     def destroy
       set_object
+
+      check_execution destroy_checks if respond_to? destroy_checks
+
       notice = model_instance_variable.destroy ? I18n.t('successful_deletion') : I18n.t('unsuccessful_deletion')
       redirect_to(send redirect_path, {notice: notice})
     end
@@ -59,6 +62,14 @@ module SimpleController
     def show
       set_object
     end
+  end
+
+  def destroy_checks
+    []
+  end
+
+  def check_execution options
+    options.each { |o| send o }
   end
 
   def redirect_path
