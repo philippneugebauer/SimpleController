@@ -57,3 +57,8 @@ Add to your language files translations for the following symbols:
 ### License
 
 [MIT](MIT-LICENSE)
+
+### Contribute
+
+Changes should be provided by a pull request.
+To set up the simplecontroller environment, the execution of `rake db:migrate RAILS_ENV=test` in `test\dummy` folder is required.
