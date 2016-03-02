@@ -1,65 +1,12 @@
 # encoding: UTF-8
+
+require_relative 'simple_controller/create_controller'
+require_relative 'simple_controller/update_controller'
+require_relative 'simple_controller/index_controller'
+require_relative 'simple_controller/destroy_controller'
+require_relative 'simple_controller/show_controller'
+
 module SimpleController
-  module CreateController
-    include SimpleController
-
-    def new
-      setup_instance_variable model_name.new
-    end
-
-    def create
-      setup_instance_variable model_name.new(model_params)
-
-      if model_instance_variable.save
-          redirect_to(send redirect_path, {notice: I18n.t('successful_creation')})
-      else
-        render 'new'
-      end
-    end
-  end
-
-  module DestroyController
-    include SimpleController
-
-    def destroy
-      set_object
-      notice = model_instance_variable.destroy ? I18n.t('successful_deletion') : I18n.t('unsuccessful_deletion')
-      redirect_to(send redirect_path, {notice: notice})
-    end
-  end
-
-  module UpdateController
-    include SimpleController
-    extend ActiveSupport::Concern
-
-    included do
-      before_action :set_object, only: [:edit, :update]
-    end
-
-    def update
-      if model_instance_variable.update(model_params)
-        redirect_to(send redirect_path, {notice: I18n.t('successful_update')})
-      else
-        render 'edit'
-      end
-    end
-  end
-
-  module IndexController
-    include SimpleController
-
-    def index
-      setup_instance_variable(model_name.all, model_name.to_s.pluralize.underscore)
-    end
-  end
-
-  module ShowController
-    include SimpleController
-
-    def show
-      set_object
-    end
-  end
 
   def redirect_path
     model_path = "#{model_name_as_sym.pluralize}_path"
