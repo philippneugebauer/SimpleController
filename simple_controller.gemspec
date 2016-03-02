@@ -27,5 +27,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'codeclimate-test-reporter'
   spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'jquery-rails'
   spec.add_dependency 'tzinfo-data'
 end
