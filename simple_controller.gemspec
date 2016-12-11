@@ -20,12 +20,14 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   spec.test_files = Dir["test/**/*"]
 
-  spec.required_ruby_version = '>= 1.9.3'
-  spec.add_dependency 'rails', '~> 4.0'
-  spec.add_dependency 'activesupport', '~> 4.0'
+  spec.required_ruby_version = '>= 2.0.0'
+  spec.add_dependency 'rails', '>= 4.0'
+  spec.add_dependency 'activesupport', '>= 4.0'
   spec.add_development_dependency 'bundler', '~> 1.7'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rake', '>= 10.0'
   spec.add_development_dependency 'codeclimate-test-reporter'
   spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'rails-controller-testing'
+  spec.add_development_dependency 'i18n-debug'
   spec.add_dependency 'tzinfo-data'
 end
