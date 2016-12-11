@@ -8,6 +8,10 @@ Bundler::GemHelper.install_tasks
 
 require 'rake/testtask'
 
+Rake::TestTask.new(:prep_test) do
+  sh %{cd test/dummy && RAILS_ENV=test DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:migrate}
+end
+
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.libs << 'test'
@@ -15,5 +19,6 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = false
 end
 
+task :test => :prep_test
 
 task default: :test
