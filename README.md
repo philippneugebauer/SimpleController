@@ -25,8 +25,8 @@ The generated instance variable usable for your views will be `plural model name
 
 ### Provided methods
 
-Actually, SimpleController provides all `CRUD` methods of Rails and it is only possible to deactivate them by overriding the methods in your controller implementation.
-Next, if you don't want to have permitted all model attributes, you need to override the `model_params` method.
+Actually, SimpleController provides the `CRUD` methods of the included controllers.
+If you don't want to have permitted all model attributes, you need to override the `model_params` method.
 If you use a customized `id` for your model, you also need to override the `set_object` method.
 
 That means that you just need to add a method like this to your class:
