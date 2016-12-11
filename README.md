@@ -2,7 +2,10 @@
 
 [![Build Status](https://travis-ci.org/philippneugebauer/SimpleController.svg?branch=master)](https://travis-ci.org/philippneugebauer/SimpleController) [![Code Climate](https://codeclimate.com/github/philippneugebauer/SimpleController/badges/gpa.svg)](https://codeclimate.com/github/philippneugebauer/SimpleController) [![Test Coverage](https://codeclimate.com/github/philippneugebauer/SimpleController/badges/coverage.svg)](https://codeclimate.com/github/philippneugebauer/SimpleController) [![Dependency Status](https://gemnasium.com/philippneugebauer/SimpleController.svg)](https://gemnasium.com/philippneugebauer/SimpleController)
 
-This gem provides you the standard logic of a rails controller which needn't to be implemented by every controller in the same way. Therefore, this gem gives you the chance to avoid a lot of redundant code which furthermore improves the maintainability of your code. It requires Ruby >= 2.0.
+This gem provides you the standard logic of a rails controller which needn't to
+be implemented by every controller in the same way. Therefore, this gem gives
+you the chance to avoid a lot of redundant code which furthermore improves the
+maintainability of your code. It requires Ruby >= 2.0.
 
 ### Use it in your application
 
@@ -25,9 +28,10 @@ The generated instance variable usable for your views will be `plural model name
 
 ### Provided methods
 
-Actually, SimpleController provides the `CRUD` methods of the included controllers.
-If you don't want to have permitted all model attributes, you need to override the `model_params` method.
-If you use a customized `id` for your model, you also need to override the `set_object` method.
+Actually, SimpleController provides the `CRUD` methods of the included
+controllers. If you don't want to have permitted all model attributes, you need
+to override the `model_params` method. If you use a customized `id` for your
+model, you also need to override the `set_object` method.
 
 That means that you just need to add a method like this to your class:
 
@@ -43,9 +47,15 @@ def set_object
 end
 ```
 
+If you want to change the default `notices`, you need to override the
+`destroy_notice_message`, `create_notice_message` or `update_notice_message`
+methods. Per default, the name of the `model` and a description of the action
+is displayed.
+
 ### Required Adaption:
 
-Add to your language files translations for the following symbols which are appended after the model's name:
+Add to your language files translations for the following symbols which are
+appended after the model's name:
 
     your_language:
       successful_creation: has been created
@@ -53,12 +63,11 @@ Add to your language files translations for the following symbols which are appe
       successful_deletion: has been deleted
       unsuccessful_deletion: could not deleted
 
-
 ### License
 
 [MIT](MIT-LICENSE)
 
 ### Contribute
 
-Changes should be provided by a pull request.
-To set up the simplecontroller environment, the execution of `rake db:migrate RAILS_ENV=test` in `test\dummy` folder is required.
+Changes should be provided by a pull request. Additionally, `rake` must
+be executed outside the test folders to work correctly.
