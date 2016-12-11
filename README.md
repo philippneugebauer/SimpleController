@@ -45,13 +45,13 @@ end
 
 ### Required Adaption:
 
-Add to your language files translations for the following symbols:
+Add to your language files translations for the following symbols which are appended after the model's name:
 
     your_language:
-      successful_creation
-      successful_update
-      successful_deletion
-      unsuccessful_deletion
+      successful_creation: has been created
+      successful_update: has been updated
+      successful_deletion: has been deleted
+      unsuccessful_deletion: could not deleted
 
 
 ### License
