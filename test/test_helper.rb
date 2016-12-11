@@ -1,7 +1,7 @@
 # Configure Rails Environment
 if ENV['COVERAGE']
-  require "codeclimate-test-reporter"
-  CodeClimate::TestReporter.start
+  require 'simplecov'
+  SimpleCov.start
 end
 ENV["RAILS_ENV"] = "test"
 
