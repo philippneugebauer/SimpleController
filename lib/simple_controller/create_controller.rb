@@ -10,13 +10,13 @@ module SimpleController
       setup_instance_variable model_name.new(model_params)
 
       if model_instance_variable.save
-        redirect_to(send redirect_path, {notice: notice_message})
+        redirect_to(send redirect_path, {notice: create_notice_message})
       else
         render 'new'
       end
     end
 
-    def notice_message
+    def create_notice_message
       "#{model_name} #{I18n.t('successful_creation')}"
     end
   end

@@ -9,13 +9,13 @@ module SimpleController
 
     def update
       if model_instance_variable.update(model_params)
-        redirect_to(send redirect_path, {notice: notice_message})
+        redirect_to(send redirect_path, {notice: update_notice_message})
       else
         render 'edit'
       end
     end
 
-    def notice_message
+    def update_notice_message
       "#{model_name} #{I18n.t('successful_update')}"
     end
   end
