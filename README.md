@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/philippneugebauer/SimpleController.svg?branch=master)](https://travis-ci.org/philippneugebauer/SimpleController) [![Code Climate](https://codeclimate.com/github/philippneugebauer/SimpleController/badges/gpa.svg)](https://codeclimate.com/github/philippneugebauer/SimpleController) [![Test Coverage](https://codeclimate.com/github/philippneugebauer/SimpleController/badges/coverage.svg)](https://codeclimate.com/github/philippneugebauer/SimpleController) [![Dependency Status](https://gemnasium.com/philippneugebauer/SimpleController.svg)](https://gemnasium.com/philippneugebauer/SimpleController)
 
-This gem provides you the standard logic of a rails controller which needn't to be implemented by every controller in the same way. Therefore, this gem gives you the chance to avoid a lot of redundant code which furthermore improves the maintainability of your code.
+This gem provides you the standard logic of a rails controller which needn't to be implemented by every controller in the same way. Therefore, this gem gives you the chance to avoid a lot of redundant code which furthermore improves the maintainability of your code. It requires Ruby >= 2.0.
 
 ### Use it in your application
 
@@ -12,7 +12,7 @@ Installation is done by the following commands:
     $ bundle
 
 Use it in your controllers:
-```ruby 
+```ruby
 class YourController < ActionController::Base (or another parent class extending this class)
   include SimpleController::IndexController (index)
   include SimpleController::CreateController (new + create)
@@ -46,7 +46,7 @@ end
 ### Required Adaption:
 
 Add to your language files translations for the following symbols:
-    
+
     your_language:
       successful_creation
       successful_update
