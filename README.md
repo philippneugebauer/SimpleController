@@ -48,9 +48,13 @@ end
 ```
 
 If you want to change the default `notices`, you need to override the
-`destroy_notice_message`, `create_notice_message` or `update_notice_message`
-methods. Per default, the name of the `model` and a description of the action
-is displayed.
+`destroy_notice`, `create_notice` or `update_notice`
+methods returning your opted message as string. Per default, the name of the
+`model` and a description of the action is displayed.
+
+Moreover, the redirect paths after a creation, update and delete can be
+customized by overriding the `create_redirect`, `update_redirect` or
+`delete_redirect` method. The all expect the wanted path as string output.
 
 ### Required Adaption:
 

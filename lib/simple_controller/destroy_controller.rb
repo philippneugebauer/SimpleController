@@ -5,10 +5,14 @@ module SimpleController
     def destroy
       set_object
       model_instance_variable.destroy
-      redirect_to(send redirect_path, {notice: destroy_notice_message})
+      redirect_to(send destroy_redirect, {notice: destroy_notice})
     end
 
-    def destroy_notice_message
+    def destroy_redirect
+      redirect_path
+    end
+
+    def destroy_notice
       "#{model_name} #{model_instance_variable.destroyed? ? I18n.t('successful_deletion') : I18n.t('unsuccessful_deletion')}"
     end
   end
