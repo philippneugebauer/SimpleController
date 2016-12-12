@@ -50,11 +50,25 @@ end
 If you want to change the default `notices`, you need to override the
 `destroy_notice`, `create_notice` or `update_notice`
 methods returning your opted message as string. Per default, the name of the
-`model` and a description of the action is displayed.
+`model` and a description of the action is displayed:
+
+```ruby
+def create_notice
+  # e.g. User has been created
+  "#{model_name} #{I18n.t('successful_creation')}"
+end
+```
 
 Moreover, the redirect paths after a creation, update and delete can be
 customized by overriding the `create_redirect`, `update_redirect` or
-`delete_redirect` method. The all expect the wanted path as string output.
+`delete_redirect` method. The all expect the wanted path as string output:
+
+```ruby
+def create_redirect
+  # must be the path as string!
+  'my_custom_path'
+end
+```
 
 ### Required Adaption:
 
